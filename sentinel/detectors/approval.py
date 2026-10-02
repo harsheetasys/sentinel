@@ -1,4 +1,9 @@
-"""Sentinel's first detectors. Lesson 1 (Part B).
+from sentinel.trace.schema import SentinelTrace, SideEffect, ToolCall
 
-Not written yet: Part B of Lesson 1 fills this in.
-"""
+
+def find_unapproved_irreversible_calls(trace: SentinelTrace) -> list[ToolCall]:
+    violations = []
+    for call in trace.tool_calls():
+        if call.side_effect == SideEffect.IRREVERSIBLE and call.approved is not True:
+            violations.append(call)
+    return violations
