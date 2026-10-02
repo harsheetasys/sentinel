@@ -1,0 +1,7 @@
+# Lesson 1+
+pydantic>=2.7
+pytest>=8
+python-dotenv>=1.0
+# Lesson 5+ (uncomment when we get there)
+# openai-agents==0.22.3
+# google-adk==2.11.0
